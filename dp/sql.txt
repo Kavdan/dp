@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS tokens;
+DROP TABLE IF EXISTS activation_links;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+id varchar(255) PRIMARY KEY NOT NULL,
+name varchar(255) NOT NULL,
+email varchar(255) NOT NULL UNIQUE,
+password varchar(255) NOT NULL,
+is_activated bool DEFAULT 0
+);
+
+CREATE TABLE tokens (
+id varchar(255) PRIMARY KEY NOT NULL,
+user_id varchar(255) NOT NULL UNIQUE, 
+refresh_token varchar(255) NOT NULL UNIQUE,
+expiry_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE activation_links (
+    id varchar(255) NOT NULL PRIMARY KEY,
+    user_id varchar(255) NOT NULL UNIQUE,
+    activation_link varchar(255) NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+

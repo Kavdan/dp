@@ -1,0 +1,126 @@
+.authorization {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    min-width: 360px;
+    border: 1px solid black;
+    .tabs {
+        display: flex;
+        gap: 20px;
+        margin:20px 0 20px 0;
+        padding-left: 20px;
+
+        span {
+            color: #6a6a6a;
+            cursor: pointer;
+        }
+
+        span.active {
+            color: black;
+        }
+    }
+
+    form {
+        border-top: 1px solid #6A6A6A;
+        border-bottom: 1px solid #6A6A6A;
+        padding: 30px 0 30px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        
+        input {
+            padding: 10px;
+            border-radius: 8px;
+            outline: none;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+        }
+
+        .email-input, .password-input, .name-input {
+            width: 60%;
+            &:focus {
+                border: 1px solid rgba(0, 0, 0, 1);
+            }
+        }
+
+        .accept-privacy{
+            width: 60%;
+            display: flex;
+            gap:10px;
+            span {
+                width: 100%;
+            }
+        }
+
+        .submit {
+            min-width: 150px;
+            border: none;
+            background: #8F00FF;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 20px;
+
+            &:hover {
+                background: #6100ac;
+            }
+        }
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin:20px 0 20px 0;
+        .icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            div {
+                width: 35px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+    
+            img {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+
+            .google-icon {
+                background: #EA4335;
+
+                &:hover {
+                    background: #e03020;
+                }
+            }
+
+            .vk-icon {
+                background: #0077FF;
+
+                &:hover {
+                    background: #0060ce;
+                }
+            }
+
+            .github-icon {
+                background: #24292F;
+
+                &:hover {
+                    background: #191c20;
+                }
+            }
+        }
+    }
+}
